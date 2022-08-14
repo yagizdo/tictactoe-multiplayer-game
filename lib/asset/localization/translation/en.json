@@ -1,0 +1,7 @@
+{
+  "home_view": {
+    "single": "Single Player",
+    "coop": "Co-Op",
+    "Multiplayer": "Multi Player"
+  }
+}

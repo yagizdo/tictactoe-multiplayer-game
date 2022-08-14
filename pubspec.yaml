@@ -50,6 +50,9 @@ dependencies:
   # Page Transition
   page_transition: ^2.0.9
 
+  # Localization
+  easy_localization: ^3.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

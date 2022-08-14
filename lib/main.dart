@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_multiplayer_game/routes.dart';
 import 'package:tictactoe_multiplayer_game/view/splash_view.dart';
 
 import 'constants/app_theme.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           title: 'Material App',
           theme: theme,
           darkTheme: darkTheme,
+          onGenerateRoute: Routes.generateRoute,
           home: const SplashView(),
         ),
       ),

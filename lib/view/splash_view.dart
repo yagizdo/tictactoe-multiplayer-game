@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tictactoe_multiplayer_game/constants/app_assets.dart';
 import 'package:tictactoe_multiplayer_game/constants/app_theme.dart';
-import 'package:tictactoe_multiplayer_game/view/home_view.dart';
+import 'package:tictactoe_multiplayer_game/routes.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -48,9 +48,9 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
             _controller
               ..duration = composition.duration
               ..forward().whenComplete(
-                () => Navigator.pushReplacement(
+                () => Navigator.pushReplacementNamed(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomeView()),
+                  Routes.homeViewRoute,
                 ),
               );
           },

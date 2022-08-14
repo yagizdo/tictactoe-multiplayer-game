@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     final appTheme = AppTheme();
 
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(375, 667),
       builder: (BuildContext context, Widget? child) => AdaptiveTheme(
         // Light Mode
         light: appTheme.lightTheme,

@@ -50,6 +50,9 @@ dependencies:
   # Localization
   easy_localization: ^3.0.1
 
+  # Internet
+  internet_connection_checker: ^0.0.1+4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

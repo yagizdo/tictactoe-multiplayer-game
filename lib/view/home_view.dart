@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../constants/app_assets.dart';
+import '../constants/app_theme.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -7,10 +9,20 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          'Home View',
-          style: TextStyle(fontSize: 20.sp),
+      body: Container(
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [linearColorOne, linearColorTwo]),
+          image: DecorationImage(
+            image: AssetImage(AppAsset.backgroundImage),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
+          children: [],
         ),
       ),
     );

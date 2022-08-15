@@ -28,6 +28,17 @@ SizedBox height8 = SizedBox(
   height: 8.h,
 );
 
+// Home view logo top padding
 SizedBox height67 = SizedBox(
   height: 67.h,
+);
+
+// Home view single player button top padding
+SizedBox height56 = SizedBox(
+  height: 56.h,
+);
+
+// Menu buttons between padding
+SizedBox height21 = SizedBox(
+  height: 21.h,
 );

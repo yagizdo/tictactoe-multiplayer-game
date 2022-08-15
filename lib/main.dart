@@ -22,7 +22,7 @@ Future<void> main() async {
     ],
     assetLoader: const CodegenLoader(),
     fallbackLocale: const Locale('en'),
-    child: MyApp(),
+    child: const MyApp(),
   ));
 }
 
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
         locale: context.locale,
+        theme: appTheme.darkTheme,
         onGenerateRoute: Routes.generateRoute,
         home: const SplashView(),
       ),

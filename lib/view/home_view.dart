@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/app_assets.dart';
 import '../constants/app_theme.dart';
@@ -22,7 +23,10 @@ class HomeView extends StatelessWidget {
           ),
         ),
         child: Column(
-          children: [],
+          children: [
+            // Logo Placeholder
+            SizedBox(width: 173.w, height: 173.h, child: const Placeholder()),
+          ],
         ),
       ),
     );

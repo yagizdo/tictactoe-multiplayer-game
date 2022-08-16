@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_multiplayer_game/routes.dart';
 
 import '../../constants/app_constants.dart';
 import '../../constants/app_theme.dart';
@@ -25,7 +26,9 @@ class MenuButtonsSection extends StatelessWidget {
 
         // Co-Op
         MenuButton(
-          function: () {},
+          function: () {
+            Navigator.pushReplacementNamed(context, Routes.gameViewRoute);
+          },
           width: 240.w,
           height: 50.h,
           backgroundColor: blue,

@@ -20,7 +20,7 @@ class AppTheme {
         titleLarge:
             TextStyle(color: white, fontSize: 20, fontWeight: FontWeight.bold),
 
-        // Game view username text
+        // Game view username text and score text
         titleMedium:
             TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.bold),
       ));

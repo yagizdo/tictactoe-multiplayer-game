@@ -50,6 +50,16 @@ SizedBox height26 = SizedBox(
   height: 26.h,
 );
 
+// User box username top padding
+SizedBox height12 = SizedBox(
+  height: 12.h,
+);
+
+// Game view userbox username and icon between padding
+SizedBox height15 = SizedBox(
+  height: 15.h,
+);
+
 // Widths
 
 // Gameview Timer - Quit button icon and text between padding

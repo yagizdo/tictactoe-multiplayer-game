@@ -82,6 +82,7 @@ flutter:
   assets:
     # Images
     - lib/asset/img/
+    - lib/asset/icon/
 
     # Localization
     - lib/asset/localization/translation/

@@ -53,6 +53,9 @@ dependencies:
   # Internet
   internet_connection_checker: ^0.0.1+4
 
+  # Flutter Svg
+  flutter_svg: ^1.1.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

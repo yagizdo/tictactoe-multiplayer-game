@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// Heights
+
 SizedBox height25 = SizedBox(
   height: 25.h,
 );
@@ -41,4 +43,16 @@ SizedBox height56 = SizedBox(
 // Menu buttons between padding
 SizedBox height21 = SizedBox(
   height: 21.h,
+);
+
+// Gameview Quit button top padding
+SizedBox height26 = SizedBox(
+  height: 26.h,
+);
+
+// Widths
+
+// Gameview Timer - Quit button icon and text between padding
+SizedBox width9 = SizedBox(
+  width: 9.w,
 );

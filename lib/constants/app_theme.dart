@@ -7,6 +7,7 @@ const orange = Color(0xFFFFA158);
 const linearColorOne = Color(0xFF1A1F4E);
 const linearColorTwo = Color(0xFF23295E);
 const purple = Color(0xFF624DBE);
+const black = Color(0xFF101130);
 
 class AppTheme {
   final darkTheme = ThemeData(

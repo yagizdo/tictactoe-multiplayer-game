@@ -60,6 +60,11 @@ SizedBox height15 = SizedBox(
   height: 15.h,
 );
 
+// Game view game container top padding
+SizedBox height36 = SizedBox(
+  height: 36.h,
+);
+
 // Widths
 
 // Gameview Timer - Quit button icon and text between padding

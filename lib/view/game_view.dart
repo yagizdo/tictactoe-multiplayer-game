@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tictactoe_multiplayer_game/constants/app_constants.dart';
+import 'package:tictactoe_multiplayer_game/widget/game_view/game_container.dart';
 import 'package:tictactoe_multiplayer_game/widget/game_view/score_component.dart';
 import 'package:tictactoe_multiplayer_game/widget/game_view/user_box.dart';
 import 'package:tictactoe_multiplayer_game/widget/gradient_background.dart';
@@ -43,7 +44,11 @@ class GameView extends StatelessWidget {
                   ScoreComponent(),
                   UserBox(isTurn: false, isX: false),
                 ],
-              )
+              ),
+
+              height36,
+
+              const GameContainer(),
             ],
           ),
         ),

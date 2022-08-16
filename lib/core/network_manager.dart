@@ -17,7 +17,6 @@ class NetworkManager extends INetworkManager {
   @override
   void handleNetworkChange(NetworkCallback onChange) {
     _subscription = _connectionChecker.onStatusChange.listen((event) {
-      print('internet : $event');
       onChange.call(
         NetworkResult.checkConnectivityResult(event),
       );

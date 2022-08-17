@@ -13,13 +13,13 @@ mixin _$GameViewModel on _GameViewModel, Store {
       Atom(name: '_GameViewModel.isDone', context: context);
 
   @override
-  bool? get isDone {
+  bool get isDone {
     _$isDoneAtom.reportRead();
     return super.isDone;
   }
 
   @override
-  set isDone(bool? value) {
+  set isDone(bool value) {
     _$isDoneAtom.reportWrite(value, super.isDone, () {
       super.isDone = value;
     });
@@ -28,13 +28,13 @@ mixin _$GameViewModel on _GameViewModel, Store {
   late final _$isWinAtom = Atom(name: '_GameViewModel.isWin', context: context);
 
   @override
-  bool? get isWin {
+  bool get isWin {
     _$isWinAtom.reportRead();
     return super.isWin;
   }
 
   @override
-  set isWin(bool? value) {
+  set isWin(bool value) {
     _$isWinAtom.reportWrite(value, super.isWin, () {
       super.isWin = value;
     });

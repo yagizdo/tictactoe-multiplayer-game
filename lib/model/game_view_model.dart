@@ -25,10 +25,10 @@ abstract class _GameViewModel with Store {
   ];
 
   @observable
-  bool? isDone;
+  bool isDone = false;
 
   @observable
-  bool? isWin;
+  bool isWin = false;
 
   @observable
   bool isX = true;
@@ -46,9 +46,16 @@ abstract class _GameViewModel with Store {
         if (playerPosition0 == playerPosition1 &&
             playerPosition0 == playerPosition2) {
           isDone = true;
+          isWin = true;
           return;
         }
       }
+    }
+  }
+
+  void checkDraw() {
+    if (boardList.every((element) => element.isNotEmpty && isWin == false)) {
+      print('Draw!');
     }
   }
 
@@ -56,6 +63,7 @@ abstract class _GameViewModel with Store {
   void clickEvent(int index) {
     boardList[index] = isX ? 'x' : 'o';
     checkWin();
+    checkDraw();
     if (isDone == true) {
       print('game over ${isX == true ? 'x' : 'o'} win');
       return;

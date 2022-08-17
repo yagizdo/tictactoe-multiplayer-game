@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         locale: context.locale,
         theme: appTheme.darkTheme,
+        navigatorKey: getIt<NavigationService>().navigatorKey,
         onGenerateRoute: Routes.generateRoute,
         home: const SplashView(),
       ),

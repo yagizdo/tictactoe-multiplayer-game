@@ -1,6 +1,8 @@
 import 'package:mobx/mobx.dart';
 import 'package:tictactoe_multiplayer_game/core/network_manager.dart';
 
+import '../locator.dart';
+
 part 'game_view_model.g.dart';
 
 class GameViewModel = _GameViewModel with _$GameViewModel;
@@ -23,6 +25,8 @@ abstract class _GameViewModel with Store {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
+  late final NavigationService _navigationService = getIt<NavigationService>();
 
   @observable
   bool isDone = false;
@@ -47,6 +51,7 @@ abstract class _GameViewModel with Store {
             playerPosition0 == playerPosition2) {
           isDone = true;
           isWin = true;
+          _navigationService.showMyDialog(winner: isX ? 'X' : 'O');
           return;
         }
       }
@@ -55,7 +60,7 @@ abstract class _GameViewModel with Store {
 
   void checkDraw() {
     if (boardList.every((element) => element.isNotEmpty && isWin == false)) {
-      print('Draw!');
+      _navigationService.showMyDialog(isDraw: true);
     }
   }
 
@@ -65,7 +70,6 @@ abstract class _GameViewModel with Store {
     checkWin();
     checkDraw();
     if (isDone == true) {
-      print('game over ${isX == true ? 'x' : 'o'} win');
       return;
     }
     isX = !isX;

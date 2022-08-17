@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
+import 'package:tictactoe_multiplayer_game/model/game_view_model.dart';
 
 import '../../constants/app_assets.dart';
 import '../../constants/app_theme.dart';
@@ -14,7 +16,7 @@ class GameBox extends StatefulWidget {
 }
 
 class _GameBoxState extends State<GameBox> {
-  List<String> gameList = List.filled(9, '', growable: false);
+  final GameViewModel _gameViewModel = GetIt.I<GameViewModel>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +24,9 @@ class _GameBoxState extends State<GameBox> {
       child: InkWell(
         onTap: () {
           setState(() {
-            gameList[widget.index] = 'x';
+            if (_gameViewModel.boardList[widget.index].isEmpty) {
+              _gameViewModel.clickEvent(widget.index);
+            }
           });
         },
         child: Container(
@@ -32,12 +36,13 @@ class _GameBoxState extends State<GameBox> {
             color: black,
             borderRadius: BorderRadius.circular(8.sp),
           ),
-          child: gameList[widget.index].isEmpty
+          child: _gameViewModel.boardList[widget.index].isEmpty
               ? const SizedBox()
               : Center(
-                  child: SvgPicture.asset(gameList[widget.index] == 'x'
-                      ? AppAsset.xIcon
-                      : AppAsset.oIcon),
+                  child: SvgPicture.asset(
+                      _gameViewModel.boardList[widget.index] == 'x'
+                          ? AppAsset.xIcon
+                          : AppAsset.oIcon),
                 ),
         ),
       ),

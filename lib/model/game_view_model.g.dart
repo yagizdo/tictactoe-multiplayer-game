@@ -40,18 +40,19 @@ mixin _$GameViewModel on _GameViewModel, Store {
     });
   }
 
-  late final _$isXAtom = Atom(name: '_GameViewModel.isX', context: context);
+  late final _$userTurnAtom =
+      Atom(name: '_GameViewModel.userTurn', context: context);
 
   @override
-  bool get isX {
-    _$isXAtom.reportRead();
-    return super.isX;
+  int get userTurn {
+    _$userTurnAtom.reportRead();
+    return super.userTurn;
   }
 
   @override
-  set isX(bool value) {
-    _$isXAtom.reportWrite(value, super.isX, () {
-      super.isX = value;
+  set userTurn(int value) {
+    _$userTurnAtom.reportWrite(value, super.userTurn, () {
+      super.userTurn = value;
     });
   }
 
@@ -90,7 +91,7 @@ mixin _$GameViewModel on _GameViewModel, Store {
     return '''
 isDone: ${isDone},
 isWin: ${isWin},
-isX: ${isX},
+userTurn: ${userTurn},
 boardList: ${boardList}
     ''';
   }

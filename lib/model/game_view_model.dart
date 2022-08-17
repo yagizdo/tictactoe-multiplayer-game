@@ -34,8 +34,9 @@ abstract class _GameViewModel with Store {
   @observable
   bool isWin = false;
 
+  // User turn = 0 (X) : User Turn = 1 (O)
   @observable
-  bool isX = true;
+  int userTurn = 0;
 
   @observable
   var boardList = ObservableList<String>.of(List.filled(9, ''));
@@ -51,7 +52,7 @@ abstract class _GameViewModel with Store {
             playerPosition0 == playerPosition2) {
           isDone = true;
           isWin = true;
-          _navigationService.showMyDialog(winner: isX ? 'X' : 'O');
+          _navigationService.showMyDialog(winner: userTurn == 0 ? 'X' : 'O');
           return;
         }
       }
@@ -66,12 +67,16 @@ abstract class _GameViewModel with Store {
 
   @action
   void clickEvent(int index) {
-    boardList[index] = isX ? 'x' : 'o';
+    boardList[index] = userTurn == 0 ? 'x' : 'o';
     checkWin();
     checkDraw();
     if (isDone == true) {
       return;
     }
-    isX = !isX;
+    if (userTurn == 0) {
+      userTurn = 1;
+    } else {
+      userTurn = 0;
+    }
   }
 }

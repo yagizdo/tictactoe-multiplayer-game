@@ -65,9 +65,19 @@ SizedBox height36 = SizedBox(
   height: 36.h,
 );
 
+// Game view dialog points container top padding
+SizedBox height32 = SizedBox(
+  height: 32.h,
+);
+
 // Widths
 
 // Gameview Timer - Quit button icon and text between padding
 SizedBox width9 = SizedBox(
   width: 9.w,
+);
+
+// Gameview dialog quit and restart button text between padding
+SizedBox width5 = SizedBox(
+  width: 5.w,
 );

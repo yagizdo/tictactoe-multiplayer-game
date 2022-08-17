@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tictactoe_multiplayer_game/core/network_manager.dart';
+import 'package:tictactoe_multiplayer_game/widget/game_view/game_dialog/game_dialog_container.dart';
 
 import 'model/game_view_model.dart';
 
@@ -22,15 +21,11 @@ class NavigationService {
 
   void showMyDialog({String? winner, bool isDraw = false}) {
     showDialog(
-        context: navigatorKey.currentContext!,
-        builder: (context) => BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Center(
-                child: Material(
-                  color: Colors.transparent,
-                  child: isDraw ? Text('Draw!') : Text('Hello ${winner}'),
-                ),
-              ),
-            ));
+      context: navigatorKey.currentContext!,
+      builder: (context) => GameDialogContainer(
+        winner: winner,
+        isDraw: isDraw,
+      ),
+    );
   }
 }

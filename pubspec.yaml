@@ -64,6 +64,9 @@ dependencies:
   # Dependency
   get_it: ^7.2.0
 
+  # Dialog
+  flutter_smart_dialog: ^4.5.4+2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

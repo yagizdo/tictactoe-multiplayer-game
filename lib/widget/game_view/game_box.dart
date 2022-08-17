@@ -24,6 +24,9 @@ class _GameBoxState extends State<GameBox> {
       child: InkWell(
         onTap: () {
           setState(() {
+            if (_gameViewModel.isDone == true) {
+              return;
+            }
             if (_gameViewModel.boardList[widget.index].isEmpty) {
               _gameViewModel.clickEvent(widget.index);
             }

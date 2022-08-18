@@ -18,12 +18,6 @@ class _TimerComponentState extends State<TimerComponent> {
   final GameViewModel _gameViewModel = GetIt.I<GameViewModel>();
 
   @override
-  void initState() {
-    super.initState();
-    _gameViewModel.updateTimer();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,

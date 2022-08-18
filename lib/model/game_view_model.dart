@@ -29,6 +29,14 @@ abstract class _GameViewModel with Store {
 
   late final NavigationService _navigationService = getIt<NavigationService>();
 
+  String twoDigits(int n) => n.toString().padLeft(2, '0');
+
+  @observable
+  String minutes = '0';
+
+  @observable
+  String seconds = '0';
+
   @observable
   bool isDone = false;
 
@@ -44,14 +52,21 @@ abstract class _GameViewModel with Store {
   int timerValue = 0;
 
   @observable
+  Duration timerDuration = const Duration(seconds: 0);
+
+  @observable
   var boardList = ObservableList<String>.of(List.filled(9, ''));
 
   void updateTimer() {
     timerValue += 1;
+    timerDuration = Duration(seconds: timerValue);
+    minutes = twoDigits(timerDuration.inMinutes.remainder(60));
+    seconds = twoDigits(timerDuration.inSeconds.remainder(60));
   }
 
   void disposeTimer() {
     timerValue = 0;
+    timerDuration = const Duration(seconds: 0);
   }
 
   void checkWin() {
@@ -66,6 +81,7 @@ abstract class _GameViewModel with Store {
           isDone = true;
           isWin = true;
           _navigationService.showMyDialog(winner: userTurn == 0 ? 'X' : 'O');
+          disposeTimer();
           return;
         }
       }
@@ -75,6 +91,7 @@ abstract class _GameViewModel with Store {
   void checkDraw() {
     if (boardList.every((element) => element.isNotEmpty && isWin == false)) {
       _navigationService.showMyDialog(isDraw: true);
+      disposeTimer();
     }
   }
 
@@ -83,6 +100,7 @@ abstract class _GameViewModel with Store {
     boardList.fillRange(0, 9, '');
     isDone = false;
     isWin = false;
+    disposeTimer();
     userTurn = 0;
   }
 

@@ -16,6 +16,13 @@ class TimerComponent extends StatefulWidget {
 
 class _TimerComponentState extends State<TimerComponent> {
   final GameViewModel _gameViewModel = GetIt.I<GameViewModel>();
+
+  @override
+  void initState() {
+    super.initState();
+    _gameViewModel.updateTimer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +40,9 @@ class _TimerComponentState extends State<TimerComponent> {
         children: [
           const Icon(Icons.timer),
           width9,
-          Observer(builder: (_) => Text('${_gameViewModel.timerValue}')),
+          Observer(
+              builder: (_) =>
+                  Text('${_gameViewModel.minutes}:${_gameViewModel.seconds}')),
         ],
       ),
     );

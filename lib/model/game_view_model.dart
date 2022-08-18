@@ -66,6 +66,14 @@ abstract class _GameViewModel with Store {
   }
 
   @action
+  void restartGame() {
+    boardList.fillRange(0, 9, '');
+    isDone = false;
+    isWin = false;
+    userTurn = 0;
+  }
+
+  @action
   void clickEvent(int index) {
     boardList[index] = userTurn == 0 ? 'x' : 'o';
     checkWin();

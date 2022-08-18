@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// Heights
+
 SizedBox height25 = SizedBox(
   height: 25.h,
 );
@@ -41,4 +43,41 @@ SizedBox height56 = SizedBox(
 // Menu buttons between padding
 SizedBox height21 = SizedBox(
   height: 21.h,
+);
+
+// Gameview Quit button top padding
+SizedBox height26 = SizedBox(
+  height: 26.h,
+);
+
+// User box username top padding
+SizedBox height12 = SizedBox(
+  height: 12.h,
+);
+
+// Game view userbox username and icon between padding
+SizedBox height15 = SizedBox(
+  height: 15.h,
+);
+
+// Game view game container top padding
+SizedBox height36 = SizedBox(
+  height: 36.h,
+);
+
+// Game view dialog points container top padding
+SizedBox height32 = SizedBox(
+  height: 32.h,
+);
+
+// Widths
+
+// Gameview Timer - Quit button icon and text between padding
+SizedBox width9 = SizedBox(
+  width: 9.w,
+);
+
+// Gameview dialog quit and restart button text between padding
+SizedBox width5 = SizedBox(
+  width: 5.w,
 );

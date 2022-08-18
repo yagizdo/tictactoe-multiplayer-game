@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tictactoe_multiplayer_game/asset/localization/codegen_loader.g.dart';
+import 'package:tictactoe_multiplayer_game/locator.dart';
 import 'package:tictactoe_multiplayer_game/routes.dart';
 import 'package:tictactoe_multiplayer_game/view/splash_view.dart';
 
@@ -14,6 +15,7 @@ Future<void> main() async {
   // env
   //await dotenv.load(fileName: ".env");
 
+  setup();
   runApp(EasyLocalization(
     path: 'lib/asset/localization/translation',
     supportedLocales: const [
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         locale: context.locale,
         theme: appTheme.darkTheme,
+        navigatorKey: getIt<NavigationService>().navigatorKey,
         onGenerateRoute: Routes.generateRoute,
         home: const SplashView(),
       ),

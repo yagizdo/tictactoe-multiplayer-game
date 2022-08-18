@@ -39,8 +39,20 @@ abstract class _GameViewModel with Store {
   @observable
   int userTurn = 0;
 
+  // Timer
+  @observable
+  int timerValue = 0;
+
   @observable
   var boardList = ObservableList<String>.of(List.filled(9, ''));
+
+  void updateTimer() {
+    timerValue += 1;
+  }
+
+  void disposeTimer() {
+    timerValue = 0;
+  }
 
   void checkWin() {
     for (var winningPos in winningList) {

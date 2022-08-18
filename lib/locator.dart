@@ -16,7 +16,7 @@ void setup() {
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   Future<dynamic> navigateTo(String routeName) {
-    return navigatorKey.currentState!.pushNamed(routeName);
+    return navigatorKey.currentState!.pushReplacementNamed(routeName);
   }
 
   void showMyDialog({String? winner, bool isDraw = false}) {

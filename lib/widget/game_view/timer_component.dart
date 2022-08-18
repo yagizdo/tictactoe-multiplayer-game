@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_it/get_it.dart';
 
 import '../../constants/app_constants.dart';
 import '../../constants/app_theme.dart';
+import '../../model/game_view_model.dart';
 
-class TimerComponent extends StatelessWidget {
+class TimerComponent extends StatefulWidget {
   const TimerComponent({Key? key}) : super(key: key);
 
+  @override
+  State<TimerComponent> createState() => _TimerComponentState();
+}
+
+class _TimerComponentState extends State<TimerComponent> {
+  final GameViewModel _gameViewModel = GetIt.I<GameViewModel>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +33,7 @@ class TimerComponent extends StatelessWidget {
         children: [
           const Icon(Icons.timer),
           width9,
-          const Text('0:05'),
+          Observer(builder: (_) => Text('${_gameViewModel.timerValue}')),
         ],
       ),
     );

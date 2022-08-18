@@ -56,6 +56,22 @@ mixin _$GameViewModel on _GameViewModel, Store {
     });
   }
 
+  late final _$timerValueAtom =
+      Atom(name: '_GameViewModel.timerValue', context: context);
+
+  @override
+  int get timerValue {
+    _$timerValueAtom.reportRead();
+    return super.timerValue;
+  }
+
+  @override
+  set timerValue(int value) {
+    _$timerValueAtom.reportWrite(value, super.timerValue, () {
+      super.timerValue = value;
+    });
+  }
+
   late final _$boardListAtom =
       Atom(name: '_GameViewModel.boardList', context: context);
 
@@ -76,6 +92,28 @@ mixin _$GameViewModel on _GameViewModel, Store {
       ActionController(name: '_GameViewModel', context: context);
 
   @override
+  void resetGame() {
+    final _$actionInfo = _$_GameViewModelActionController.startAction(
+        name: '_GameViewModel.resetGame');
+    try {
+      return super.resetGame();
+    } finally {
+      _$_GameViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void quitGame() {
+    final _$actionInfo = _$_GameViewModelActionController.startAction(
+        name: '_GameViewModel.quitGame');
+    try {
+      return super.quitGame();
+    } finally {
+      _$_GameViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void clickEvent(int index) {
     final _$actionInfo = _$_GameViewModelActionController.startAction(
         name: '_GameViewModel.clickEvent');
@@ -92,6 +130,7 @@ mixin _$GameViewModel on _GameViewModel, Store {
 isDone: ${isDone},
 isWin: ${isWin},
 userTurn: ${userTurn},
+timerValue: ${timerValue},
 boardList: ${boardList}
     ''';
   }

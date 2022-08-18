@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,6 +24,23 @@ class GameView extends StatefulWidget {
 
 class _GameViewState extends State<GameView> {
   final GameViewModel _gameViewModel = GetIt.I<GameViewModel>();
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      _gameViewModel.updateTimer();
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+    _gameViewModel.disposeTimer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

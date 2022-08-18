@@ -37,6 +37,14 @@ Run App
 - [ ] Leaderboard
 
 
+## App Video
+
+
+
+https://user-images.githubusercontent.com/31064552/185437488-8339c5b1-719b-4ced-8e01-84462c161ebd.mp4
+
+
+
 ##  Libraries I use in this Project:
 
 - Flutter screenutil : https://pub.dev/packages/flutter_screenutil
@@ -52,7 +60,6 @@ Run App
 - Build Runner : https://pub.dev/packages/build_runner
 - Get it : https://pub.dev/packages/get_it
 - Flutter Smart Dialog : https://pub.dev/packages/flutter_smart_dialog
-- 
 
 
 

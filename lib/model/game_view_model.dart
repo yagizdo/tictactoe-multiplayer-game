@@ -1,5 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:tictactoe_multiplayer_game/core/network_manager.dart';
+import 'package:tictactoe_multiplayer_game/routes.dart';
 
 import '../locator.dart';
 
@@ -66,11 +67,17 @@ abstract class _GameViewModel with Store {
   }
 
   @action
-  void restartGame() {
+  void resetGame() {
     boardList.fillRange(0, 9, '');
     isDone = false;
     isWin = false;
     userTurn = 0;
+  }
+
+  @action
+  void quitGame() {
+    resetGame();
+    _navigationService.navigateTo(Routes.homeViewRoute);
   }
 
   @action

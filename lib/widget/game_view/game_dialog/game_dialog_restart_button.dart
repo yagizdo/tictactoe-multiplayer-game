@@ -37,7 +37,7 @@ class _GameDialogRestartButtonState extends State<GameDialogRestartButton> {
           ),
         ),
         onPressed: () {
-          _gameViewModel.restartGame();
+          _gameViewModel.resetGame();
           Navigator.pop(context);
         },
         child: Row(

@@ -33,5 +33,9 @@ class AppTheme {
         // Quit and restart button text
         labelSmall:
             TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.w500),
+
+        // Settings popup title
+        labelMedium:
+            TextStyle(color: white, fontSize: 20, fontWeight: FontWeight.w500),
       ));
 }

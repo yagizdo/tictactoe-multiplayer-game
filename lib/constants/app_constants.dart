@@ -56,6 +56,7 @@ SizedBox height12 = SizedBox(
 );
 
 // Game view userbox username and icon between padding
+// And settings popup title top padding
 SizedBox height15 = SizedBox(
   height: 15.h,
 );

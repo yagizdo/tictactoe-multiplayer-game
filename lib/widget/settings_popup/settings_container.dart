@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_multiplayer_game/widget/settings_popup/settings_content.dart';
 
 import '../../constants/app_theme.dart';
 
@@ -19,6 +20,7 @@ class SettingsContainer extends StatelessWidget {
           color: dialogColor,
           borderRadius: BorderRadius.circular(8),
         ),
+        child: const SettingsContent(),
       ),
     );
   }

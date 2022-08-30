@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tictactoe_multiplayer_game/widget/settings_popup/settings_sound_component.dart';
+import 'package:tictactoe_multiplayer_game/widget/settings_popup/settings_vibration_component.dart';
 
 import '../../constants/app_constants.dart';
 import '../../constants/app_theme.dart';
@@ -35,6 +37,8 @@ class SettingsContent extends StatelessWidget {
                 ),
                 height30,
                 const SettingsSoundComponent(),
+                height15,
+                const SettingsVibrationComponent(),
               ],
             ),
           ),

@@ -6,6 +6,8 @@ import 'package:tictactoe_multiplayer_game/core/network_result.dart';
 
 import '../constants/app_assets.dart';
 import '../constants/app_theme.dart';
+import '../core/service/navigation_service.dart';
+import '../locator.dart';
 import '../widget/home_view/menu_buttons_section.dart';
 import '../widget/home_view/settings_fab_button.dart';
 
@@ -19,6 +21,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   late final NetworkManager _networkManager;
   NetworkResult? _networkResult;
+  late final NavigationService _navigationService = getIt<NavigationService>();
 
   @override
   void initState() {
@@ -37,7 +40,9 @@ class _HomeViewState extends State<HomeView> {
       // Settings Fab Button
       floatingActionButton: SettingsFabButton(
         backgroundColor: purple,
-        function: () {},
+        function: () {
+          _navigationService.showSettingsPopup();
+        },
         child: const Icon(
           Icons.settings,
           color: Colors.white,

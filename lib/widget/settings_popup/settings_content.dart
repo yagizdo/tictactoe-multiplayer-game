@@ -33,6 +33,7 @@ class SettingsContent extends StatelessWidget {
                   'Settings',
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
+                height30,
                 const SettingsSoundComponent(),
               ],
             ),

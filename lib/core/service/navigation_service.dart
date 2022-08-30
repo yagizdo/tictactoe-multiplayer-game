@@ -1,7 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_multiplayer_game/widget/settings_popup/settings_container.dart';
 
 import '../../widget/game_view/game_dialog/game_dialog_container.dart';
 
@@ -24,15 +22,8 @@ class NavigationService {
   void showSettingsPopup({String? winner, bool isDraw = false}) {
     showDialog(
         context: navigatorKey.currentContext!,
-        builder: (context) => Center(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 20, sigmaY: 30),
-                child: Container(
-                  color: Colors.yellow,
-                  width: 319.w,
-                  height: 350.h,
-                ),
-              ),
+        builder: (context) => const Center(
+              child: SettingsContainer(),
             ));
   }
 }

@@ -2,6 +2,7 @@ import 'package:mobx/mobx.dart';
 import 'package:tictactoe_multiplayer_game/core/network_manager.dart';
 import 'package:tictactoe_multiplayer_game/routes.dart';
 
+import '../core/service/navigation_service.dart';
 import '../locator.dart';
 
 part 'game_view_model.g.dart';
@@ -80,7 +81,7 @@ abstract class _GameViewModel with Store {
             playerPosition0 == playerPosition2) {
           isDone = true;
           isWin = true;
-          _navigationService.showMyDialog(winner: userTurn == 0 ? 'X' : 'O');
+          _navigationService.showScoreDialog(winner: userTurn == 0 ? 'X' : 'O');
           disposeTimer();
           return;
         }
@@ -90,7 +91,7 @@ abstract class _GameViewModel with Store {
 
   void checkDraw() {
     if (boardList.every((element) => element.isNotEmpty && isWin == false)) {
-      _navigationService.showMyDialog(isDraw: true);
+      _navigationService.showScoreDialog(isDraw: true);
       disposeTimer();
     }
   }

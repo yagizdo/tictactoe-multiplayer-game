@@ -7,6 +7,7 @@ import 'package:tictactoe_multiplayer_game/routes.dart';
 import 'package:tictactoe_multiplayer_game/view/splash_view.dart';
 
 import 'constants/app_theme.dart';
+import 'core/service/navigation_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

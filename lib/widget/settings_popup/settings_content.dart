@@ -6,6 +6,7 @@ import 'package:tictactoe_multiplayer_game/widget/settings_popup/settings_vibrat
 
 import '../../constants/app_constants.dart';
 import '../../constants/app_theme.dart';
+import 'settings_contact_button.dart';
 
 class SettingsContent extends StatelessWidget {
   const SettingsContent({Key? key}) : super(key: key);
@@ -39,6 +40,8 @@ class SettingsContent extends StatelessWidget {
                 const SettingsSoundComponent(),
                 height15,
                 const SettingsVibrationComponent(),
+                height15,
+                const SettingsContactButton(),
               ],
             ),
           ),

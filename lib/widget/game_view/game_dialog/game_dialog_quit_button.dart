@@ -34,7 +34,7 @@ class _GameDialogQuitButtonState extends State<GameDialogQuitButton> {
           ),
         ),
         onPressed: () {
-          _gameViewModel.quitGame();
+          _gameViewModel.quitGame(true);
         },
         child: Row(
           children: [

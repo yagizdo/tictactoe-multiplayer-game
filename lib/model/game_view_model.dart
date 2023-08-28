@@ -106,9 +106,12 @@ abstract class _GameViewModel with Store {
   }
 
   @action
-  void quitGame() {
-    resetGame();
-    _navigationService.navigateTo(Routes.homeViewRoute);
+  void quitGame(bool isDialog) {
+resetGame();
+    if(isDialog){
+    _navigationService.navigateToFirst();
+}
+_navigationService.navigateTo(Routes.homeViewRoute);
   }
 
   @action

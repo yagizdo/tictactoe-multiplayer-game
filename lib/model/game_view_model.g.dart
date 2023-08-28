@@ -151,11 +151,11 @@ mixin _$GameViewModel on _GameViewModel, Store {
   }
 
   @override
-  void quitGame() {
+  void quitGame(bool isDialog) {
     final _$actionInfo = _$_GameViewModelActionController.startAction(
         name: '_GameViewModel.quitGame');
     try {
-      return super.quitGame();
+      return super.quitGame(isDialog);
     } finally {
       _$_GameViewModelActionController.endAction(_$actionInfo);
     }

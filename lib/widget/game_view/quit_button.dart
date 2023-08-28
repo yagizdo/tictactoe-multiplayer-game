@@ -33,7 +33,7 @@ class _QuitButtonState extends State<QuitButton> {
           ),
         ),
         onPressed: () {
-          _gameViewModel.quitGame();
+          _gameViewModel.quitGame(true);
         },
         child: Row(
           children: [

@@ -9,6 +9,10 @@ class NavigationService {
     return navigatorKey.currentState!.pushReplacementNamed(routeName);
   }
 
+  void navigateToFirst() {
+    return Navigator.of(navigatorKey.currentContext!).popUntil((route) => route.isFirst);
+}
+
   void showScoreDialog({String? winner, bool isDraw = false}) {
     showDialog(
       context: navigatorKey.currentContext!,
